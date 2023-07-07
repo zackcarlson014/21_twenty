@@ -17,6 +17,9 @@
       },
       "api": {
         "21twenty": {}
+      },
+      "storage": {
+        "imagestore": {}
       }
     }
   }
