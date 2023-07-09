@@ -17,6 +17,8 @@ import {
   createNote as createNoteMutation,
   deleteNote as deleteNoteMutation,
 } from "./graphql/mutations";
+import NavBar from './ui/nav_bar/NavBar';
+
 
 const App = ({ signOut }) => {
   const [notes, setNotes] = useState([]);
@@ -70,18 +72,22 @@ const App = ({ signOut }) => {
 
   return (
     <View className="App">
-      <Heading level={1}>My Notes App</Heading>
-      
+      <NavBar />
+
+      <Heading level={1} paddingTop="5rem">My Notes App</Heading>
+
       <View as="form" margin="3rem 0" onSubmit={createNote}>
-        <Flex direction="row" justifyContent="center">
+        <Flex
+          direction="row"
+          justifyContent="center"
+          marginBottom="3rem">
           <TextField
             name="name"
             placeholder="Note Name"
             label="Note Name"
             labelHidden
             variation="quiet"
-            required
-          />
+            required />
 
           <TextField
             name="description"
@@ -89,16 +95,21 @@ const App = ({ signOut }) => {
             label="Note Description"
             labelHidden
             variation="quiet"
-            required
-          />
+            required />
+        </Flex>
 
+        <Flex
+          direction="row"
+          justifyContent="center"
+          marginBottom="3rem"
+          marginLeft="8rem">
           <View
             name="image"
             as="input"
-            type="file"
-            style={{ alignSelf: "end" }}
-          />
+            type="file" />
+        </Flex>
 
+        <Flex  direction="row" justifyContent="center">
           <Button type="submit" variation="primary">
             Create Note
           </Button>
