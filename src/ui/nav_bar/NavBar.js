@@ -29,11 +29,16 @@ export class NavBar extends Component {
   render() {
     const style = {
       position: "fixed",
-        zIndex: "999"
+        // zIndex: "999"
     };
 
     return (
-      <Menu fluid inverted color='black' style={style}>
+      <Menu
+        fluid
+        // inverted
+        color='dark-blue'
+        style={style}>
+
         <Menu.Item
           // as={Link}
           // to='/profile'
